@@ -1,5 +1,5 @@
 import {Selector as $, t} from 'testcafe';
-import BasePage from "./BasePage";
+import BasePage from './BasePage';
 
 class Login extends BasePage {
     constructor() {

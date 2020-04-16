@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.local": "testcafe chrome tests/specs/swag.item.details.spec.js",
+    "test.local": "testcafe chrome tests/specs/ -c 7",
     "lint": "eslint . --ext .js"
   },
   "keywords": [],

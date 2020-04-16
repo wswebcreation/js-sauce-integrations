@@ -1,5 +1,5 @@
 import {Selector as $, t} from 'testcafe';
-import BasePage from "./BasePage";
+import BasePage from './BasePage';
 
 class SwagOverviewPage extends BasePage {
     constructor() {
@@ -27,7 +27,7 @@ class SwagOverviewPage extends BasePage {
     }
 
     /**
-     * Get the swag item header
+     * Get the swag item header based on text or a number
      *
      * @param {string|number} needle
      *
@@ -38,7 +38,7 @@ class SwagOverviewPage extends BasePage {
     }
 
     /**
-     * Get the swag item add button
+     * Get the swag item add button based on text or a number
      *
      * @param {string|number} needle
      *
@@ -49,7 +49,7 @@ class SwagOverviewPage extends BasePage {
     }
 
     /**
-     * Get the swag item remove button
+     * Get the swag item remove button based on text or a number
      *
      * @param {string|number} needle
      *
@@ -60,7 +60,7 @@ class SwagOverviewPage extends BasePage {
     }
 
     /**
-     * Open the details of a swag item
+     * Open the details of a swag item based on text or a number
      *
      * @param {number|string} needle
      *

@@ -6,6 +6,7 @@ export default class BasePage {
 
     /**
      * Is the screen displayed
+     *
      * @returns {Promise<boolean>}
      */
     isScreenDisplayed(){

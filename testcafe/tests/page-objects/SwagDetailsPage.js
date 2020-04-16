@@ -1,5 +1,5 @@
 import {Selector as $, t} from 'testcafe';
-import BasePage from "./BasePage";
+import BasePage from './BasePage';
 
 class SwagDetailsPage extends BasePage {
     constructor() {
@@ -9,8 +9,6 @@ class SwagDetailsPage extends BasePage {
 
         this.screen = screen;
         this.swagTitle = $('.inventory_details_name');
-        this.swagDescription = $('.inventory_details_desc');
-        this.swagPrice = $('.inventory_details_price');
         this.addButton = $('.btn_primary.btn_inventory');
         this.removeButton = $('.btn_secondary.btn_inventory');
         this.goBackButton = $('.inventory_details_back_button');
@@ -23,24 +21,6 @@ class SwagDetailsPage extends BasePage {
      */
     getSwagTitle(){
         return this.swagTitle.innerText;
-    }
-
-    /**
-     * Get the swag description
-     *
-     * @returns {Promise<string>}
-     */
-    getSwagDescription(){
-        return this.swagDescription.innerText;
-    }
-
-    /**
-     * Get the swag price
-     *
-     * @returns {Promise<string>}
-     */
-    getSwagPrice(){
-        return this.swagPrice.innerText;
     }
 
     /**

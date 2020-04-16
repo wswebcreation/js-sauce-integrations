@@ -1,9 +1,9 @@
-import {LOGIN_USERS, PAGES} from "../configs/e2eConstants";
+import {LOGIN_USERS, PAGES} from '../configs/e2eConstants';
 import LoginPage from '../page-objects/LoginPage';
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import AppHeaderPage from '../page-objects/AppHeaderPage';
-import {setTestContext} from "../helpers";
+import {setTestContext} from '../helpers';
 
 fixture`Test swag items overview page`
     .beforeEach(async t => {

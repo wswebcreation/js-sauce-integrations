@@ -1,4 +1,4 @@
-import {LOGIN_USERS} from "../configs/e2eConstants";
+import {LOGIN_USERS} from '../configs/e2eConstants';
 import LoginPage from '../page-objects/LoginPage';
 import SwagListPage from '../page-objects/SwagOverviewPage';
 
