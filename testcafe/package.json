@@ -1,0 +1,21 @@
+{
+  "name": "testcafe-saucedemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.local": "testcafe chrome tests/specs/swag.item.details.spec.js",
+    "lint": "eslint . --ext .js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-testcafe": "^0.2.1",
+    "testcafe": "^1.8.4",
+    "testcafe-browser-provider-saucelabs": "^1.8.0"
+  }
+}
