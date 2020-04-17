@@ -12,7 +12,6 @@ describe('Swag Item Details', () => {
             path: PAGES.SWAG_ITEMS,
         });
         browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
-        SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
         expect(SwagOverviewPage.isDisplayed()).toEqual(
@@ -22,7 +21,6 @@ describe('Swag Item Details', () => {
 
         SwagDetailsPage.goBack();
 
-        // Actual test starts here
         expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
             true,
             'Inventory screen is still not visible'
@@ -44,7 +42,6 @@ describe('Swag Item Details', () => {
             'The amount of cart items is not equal to nothing',
         );
 
-        // Add an swag to the cart
         SwagDetailsPage.addToCart();
 
         expect(AppHeaderPage.getCartAmount()).toEqual(

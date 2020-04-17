@@ -5,7 +5,7 @@ import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
 
-describe('Cart', () => {
+describe('Cart Summary page', () => {
     it('should validate that we can continue shopping', () => {
         setTestContext({
             user: LOGIN_USERS.STANDARD,
@@ -30,11 +30,6 @@ describe('Cart', () => {
         CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(CheckoutPersonalInfoPage.isDisplayed()).toEqual(
-            false,
-            'Inventory screen is already visible'
-        );
-
         CartSummaryPage.goToCheckout();
 
         expect(CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(

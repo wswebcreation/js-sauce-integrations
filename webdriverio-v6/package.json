@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.local": "wdio test/e2e/configs/wdio.local.chrome.conf.js",
-    "test.saucelabs": "wdio test/e2e/configs/wdio.saucelabs.conf.js"
+    "test.local": "wdio test/configs/wdio.local.chrome.conf.js",
+    "test.saucelabs": "wdio test/configs/wdio.saucelabs.conf.js"
   },
   "keywords": [],
   "author": "",

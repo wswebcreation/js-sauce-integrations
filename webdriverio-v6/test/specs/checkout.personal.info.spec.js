@@ -23,7 +23,10 @@ describe('Checkout - Personal info', () => {
             'Error message is shown, this is not correct',
         );
 
-        // I'm not validating the error message here because that's content and should be a UT
+        expect(CheckoutPersonalInfoPage.getErrorMessage()).toEqual(
+            'Error: Postal Code is required',
+            'Error message is shown, but not with the correct message',
+        );
     });
 
     it('should validate that we can cancel the first checkout', () => {

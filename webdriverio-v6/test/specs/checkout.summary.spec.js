@@ -15,8 +15,6 @@ describe('Checkout - Summary', () => {
     });
 
     it('should validate that we can continue shopping', () => {
-        // It doesn't matter which error we check here, all error states should have been tested in a UT
-        // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
         CheckoutSummaryPage.finishCheckout();
 
         expect(CheckoutCompletePage.waitForIsDisplayed()).toEqual(

@@ -1,8 +1,8 @@
 import BasePage from './BasePage';
 
-const SCREEN_SELECTOR = '#cart_contents_container';
+const SCREEN_SELECTOR = '#checkout_summary_container';
 
-class CartSummaryPage extends BasePage {
+class CheckoutSummaryPage extends BasePage {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -13,12 +13,24 @@ class CartSummaryPage extends BasePage {
         return $(SCREEN_SELECTOR);
     }
 
-    get #checkoutButton() {
-        return $('.checkout_button');
+    title(needle) {
+        return this.swag(needle).$('.inventory_item_name');
     }
 
-    get #continueShoppingButton() {
-        return $('.btn_secondary');
+    description(needle) {
+        return this.swag(needle).$('.inventory_item_desc');
+    }
+
+    price(needle) {
+        return this.swag(needle).$('.inventory_item_price');
+    }
+
+    get #cancelButton() {
+        return $('.cart_cancel_link');
+    }
+
+    get #finishButton() {
+        return $('.cart_button');
     }
 
     get #items() {
@@ -26,7 +38,8 @@ class CartSummaryPage extends BasePage {
     }
 
     /**
-     * Get the amount of swag items in the cart
+     * Get the amount of swag items listed on the page
+     * @returns {number}
      */
     getSwagAmount() {
         return this.#items.length;
@@ -48,44 +61,29 @@ class CartSummaryPage extends BasePage {
     }
 
     /**
-     * Get the text of the cart swag text
+     * Get the text of the cart
      *
      * @param {number|string} needle
      *
      * @return {string}
      */
     getSwagText(needle) {
-        return this.swag(needle).getText();
+        return `${this.title(needle).getText()} ${this.description(needle).getText()} ${this.price(needle).getText()}`;
     }
 
     /**
-     * Remove an swag from the cart
-     *
-     * @param {number|string} needle
-     *
-     * @return {void}
+     * Cancel checkout
      */
-    removeSwag(needle) {
-        return this.swag(needle).$('.btn_secondary.cart_button').click();
+    cancelCheckout() {
+        this.#cancelButton.click();
     }
 
     /**
-     * Continue shopping
-     *
-     * @return {void}
+     * Finish checkout
      */
-    continueShopping() {
-        return this.#continueShoppingButton.click();
-    }
-
-    /**
-     * Go to the checkout process
-     *
-     * @return {void}
-     */
-    goToCheckout() {
-        return this.#checkoutButton.click();
+    finishCheckout() {
+        this.#finishButton.click();
     }
 }
 
-export default new CartSummaryPage();
+export default new CheckoutSummaryPage();
