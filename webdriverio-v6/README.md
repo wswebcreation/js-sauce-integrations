@@ -1,15 +1,6 @@
 # WebdriverIO V6
 This folder contains a simple set up for WebdriverIO V6.
 
-
-## First steps
-You’ll need [Node.js](http://nodejs.org) installed.
-
-- Install at least v12.16.1 or higher as this is the oldest active LTS version
-- Only releases that are or will become an LTS release are officially supported
-
-If you don't have Node installed, we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
-
 ## Install dependencies
 You can install all dependencies by running the following command
 
@@ -137,6 +128,6 @@ Spec Files:      7 passed, 7 total (100% completed) in 00:00:15
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs with this command
 
-    npm run test.local
+    npm run test.saucelabs
 
 It will spin up multiple browsers which you can find [here](./test/e2e/configs/wdio.saucelabs.conf.js).
