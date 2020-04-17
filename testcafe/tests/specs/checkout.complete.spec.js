@@ -3,7 +3,6 @@ import {setTestContext} from '../helpers';
 import LoginPage from '../page-objects/LoginPage';
 import CheckoutCompletePage from '../page-objects/CheckoutCompletePage';
 
-
 fixture`Test cart items overview page`
     .beforeEach(async t => {
         await t.resizeWindow(1366, 768);

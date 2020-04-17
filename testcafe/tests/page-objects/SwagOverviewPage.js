@@ -80,7 +80,7 @@ class SwagOverviewPage extends BasePage {
     }
 
     /**
-     * Add a swag items to the cart
+     * Add a swag item to the cart
      *
      * @param {number|string} needle
      *
@@ -88,6 +88,17 @@ class SwagOverviewPage extends BasePage {
      */
     addSwagToCart(needle) {
         return t.click(this.getSwagItemAddButton(needle));
+    }
+
+    /**
+     * Remove a swag item from the cart
+     *
+     * @param {number|string} needle
+     *
+     * @returns {Promise<void>}
+     */
+    removeSwagFromCart(needle) {
+        return t.click(this.getSwagItemRemoveButton(needle));
     }
 }
 
