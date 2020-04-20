@@ -9,6 +9,7 @@ Following frameworks are currently supported
 
 - [WebdriverIO V6 with Jasmine](./webdriverio-v6)
 - [TestCafe](./testcafe)
+- [NightWatch](./nightwatch)
 - more to follow
 
 ## First steps for all frameworks
@@ -37,4 +38,4 @@ If you have questions or remarks please file an issue or a PR.
 
 Thanks
 
-Wim Selles
+Wim Selles (wswebcreation)
