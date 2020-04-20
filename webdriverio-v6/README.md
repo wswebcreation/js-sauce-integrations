@@ -11,7 +11,7 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `webdriverio-v6` when you execute this command
 
 ## Run tests locally
-You can run the tests on your local machine, the only thing you need is Chrome. If you have it you can run this command
+You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
 
     npm run test.local
 

@@ -11,7 +11,7 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `testcafe` when you execute this command
 
 ## Run tests locally
-You can run the tests on your local machine, the only thing you need is Chrome. If you have it you can run this command
+You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
 
     npm run test.local
 
@@ -68,7 +68,7 @@ Tests failed: 0
 ```
 
 ## Run tests on Sauce Labs
-To run the tests on Sauce Labs we advice you to read [this](https://github.com/DevExpress/testcafe-browser-provider-saucelabs) 
+To run the tests on Sauce Labs we advise you to read [this](https://github.com/DevExpress/testcafe-browser-provider-saucelabs) 
 document and follow the step to set up your local and or CI-pipeline.
 
 To get all the browsers / emulators run the following command
