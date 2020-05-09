@@ -11,6 +11,7 @@ Following frameworks are currently supported
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
 - [Protractor](./protractor)
+- [Jest-Puppeteer](./jest-puppeteer)
 - more to follow
 
 ## First steps for all frameworks
