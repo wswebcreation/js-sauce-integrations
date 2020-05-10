@@ -25,6 +25,7 @@ class BasePage {
         try {
             await page.waitForSelector(selector, {
                 visible: true,
+                timeout: 3000,
             });
             return true;
         } catch (e) {
