@@ -7,8 +7,8 @@
     "preset": "jest-puppeteer"
   },
   "scripts": {
-    "test.local": "jest --runInBand",
-    "test.local.headfull": "HEADLESS=false jest --runInBand"
+    "test.local": "jest --runInBand --verbose",
+    "test.local.headfull": "HEADLESS=false jest --runInBand --verbose"
   },
   "keywords": [],
   "author": "",
