@@ -13,5 +13,5 @@ files:
   - ./test/helpers/*.js
   - ./test/e2eConstants.js
 image:
-  base: saucelabs/sauce-puppeteer-runner
-  version: latest
+  base: saucelabs/sauce-puppeteer
+  version: 3.0.4
