@@ -18,3 +18,4 @@ node_modules/
 # Extra folders
 .tmp/
 tests_output/
+coverage/
