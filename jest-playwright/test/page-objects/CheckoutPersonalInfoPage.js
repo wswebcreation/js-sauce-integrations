@@ -37,9 +37,9 @@ class CheckoutPersonalInfoPage extends BasePage {
      * @return {Promise<string>}
      */
     async getErrorMessage() {
-        await this.waitForIsDisplayed(SELECTORS.errorMessage)
+        const elementHandle = await page.$(SELECTORS.errorMessage)
 
-        return this.getText(SELECTORS.errorMessage)
+        return elementHandle.textContent()
     }
 
     /**

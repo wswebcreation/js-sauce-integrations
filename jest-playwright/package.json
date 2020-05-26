@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test.local": "jest",
-    "test.local.headfull": "HEADLESS=false jest"
+    "test.local": "jest --verbose",
+    "test.local.headfull": "HEADLESS=false jest --verbose"
   },
   "husky": {
     "hooks": {

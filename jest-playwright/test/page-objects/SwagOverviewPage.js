@@ -31,12 +31,11 @@ class SwagOverviewPage extends BasePage {
     async swag(needle) {
         if (typeof needle === 'string') {
             return page.evaluateHandle(
-                (items, string) =>
+                ([items, string]) =>
                     [...document.querySelectorAll(items)].find((item) =>
                         item.textContent.includes(string),
                     ),
-                SELECTORS.swagItems,
-                needle,
+                [SELECTORS.swagItems, needle],
             )
         }
 
@@ -53,9 +52,8 @@ class SwagOverviewPage extends BasePage {
      */
     async findJsHandleWithinSwag(needle, elementSelector) {
         return page.evaluateHandle(
-            (item, selector) => item.querySelector(selector),
-            await this.swag(needle),
-            elementSelector,
+            ([item, selector]) => item.querySelector(selector),
+            [await this.swag(needle), elementSelector],
         )
     }
 

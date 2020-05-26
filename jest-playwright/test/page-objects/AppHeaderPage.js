@@ -10,7 +10,9 @@ class AppHeaderPage extends BasePage {
      * @return {string}
      */
     async getCartAmount() {
-        return this.getText(SELECTORS.cart)
+        const elementHandle = await page.$(SELECTORS.cart)
+
+        return elementHandle.textContent()
     }
 
     /**

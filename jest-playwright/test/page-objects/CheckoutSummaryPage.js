@@ -30,12 +30,11 @@ class CheckoutSummaryPage extends BasePage {
     async swag(needle) {
         if (typeof needle === 'string') {
             return page.evaluateHandle(
-                (items, string) =>
+                ([items, string]) =>
                     [...document.querySelectorAll(items)].find((item) =>
                         item.textContent.includes(string),
                     ),
-                SELECTORS.items,
-                needle,
+                [SELECTORS.items, needle],
             )
         }
 

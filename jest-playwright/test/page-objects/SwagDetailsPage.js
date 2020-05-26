@@ -32,9 +32,11 @@ class SwagOverviewPage extends BasePage {
      * @return {Promise<string>}
      */
     async getSwagDetailsText() {
-        return `${await this.getText(SELECTORS.title)} ${await this.getText(
-            SELECTORS.description,
-        )} ${await this.getText(SELECTORS.price)}`
+        const titleHandle = await page.$(SELECTORS.title)
+        const descriptionHandle = await page.$(SELECTORS.description)
+        const priceHandle = await page.$(SELECTORS.price)
+
+        return `${await titleHandle.textContent()} ${await descriptionHandle.textContent()} ${await priceHandle.textContent()}`
     }
 
     /**
