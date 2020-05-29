@@ -9,7 +9,7 @@ describe('Checkout - Complete', () => {
             path: PAGES.CHECKOUT_COMPLETE,
         });
 
-        expect(CheckoutCompletePage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutCompletePage.waitForIsShown()).toEqual(
             true,
             'Checkout complete page was not shown',
         );

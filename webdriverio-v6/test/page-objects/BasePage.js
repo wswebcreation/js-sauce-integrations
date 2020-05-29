@@ -10,8 +10,11 @@ export default class BasePage {
      *
      * @return {boolean}
      */
-    waitForIsDisplayed(isShown = true) {
-        return $(this.selector).waitForDisplayed(DEFAULT_TIMEOUT, !isShown);
+    waitForIsShown(isShown = true) {
+        return $(this.selector).waitForDisplayed({
+            timeout: DEFAULT_TIMEOUT,
+            reverse: !isShown
+        });
     }
 
     /**

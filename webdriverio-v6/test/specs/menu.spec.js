@@ -13,32 +13,35 @@ describe('Menu', () => {
             path: PAGES.CART,
             products: [PRODUCTS.BACKPACK],
         });
-        CartSummaryPage.waitForIsDisplayed();
+        CartSummaryPage.waitForIsShown();
         MenuPage.open();
     });
 
     it('should be able to the swag items overview page', () => {
         MenuPage.openInventoryList();
 
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsShown()).toEqual(
             true,
             'Swag Items overview page was not shown',
         );
     });
 
-    it('should be able to open the about page', () => {
-        MenuPage.openAboutPage();
+    // Don't execute this test on the EU DC, the saucelabs.com url is not working there making this test fail
+    if(!process.env.REGION) {
+        it('should be able to open the about page', () => {
+            MenuPage.openAboutPage();
 
-        expect(CartSummaryPage.isDisplayed()).toEqual(
-            false,
-            'Swag Cart should not be shown anymore',
-        );
-    });
+            expect(CartSummaryPage.waitForIsShown(false)).toEqual(
+                true,
+                'Swag Cart should not be shown anymore',
+            );
+        });
+    }
 
     it('should be able to log out', () => {
         MenuPage.logout();
 
-        expect(LoginPage.waitForIsDisplayed()).toEqual(
+        expect(LoginPage.waitForIsShown()).toEqual(
             true,
             'Login is not shown',
         );

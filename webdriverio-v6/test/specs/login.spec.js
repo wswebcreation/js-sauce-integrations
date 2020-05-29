@@ -5,11 +5,11 @@ import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 describe('LoginPage', () => {
     beforeEach(() => {
         browser.url('');
-        LoginPage.waitForIsDisplayed();
+        LoginPage.waitForIsShown();
     });
 
     it('should be able to test loading of login page', () => {
-        expect(LoginPage.waitForIsDisplayed()).toEqual(
+        expect(LoginPage.waitForIsShown()).toEqual(
             true,
             'LoginPage page was not shown',
         );
@@ -19,7 +19,7 @@ describe('LoginPage', () => {
         LoginPage.signIn(LOGIN_USERS.STANDARD);
 
         // Wait for the inventory screen and check it
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsShown()).toEqual(
             true,
             'Inventory List screen was not shown',
         );

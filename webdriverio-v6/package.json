@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test.local": "wdio test/configs/wdio.local.chrome.conf.js",
-    "test.saucelabs": "wdio test/configs/wdio.saucelabs.conf.js"
+    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.js",
+    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.js"
   },
   "keywords": [],
   "author": "",

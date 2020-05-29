@@ -41,7 +41,7 @@ class LoginPage extends BasePage {
     signIn(userDetails) {
         const {password, username} = userDetails;
 
-        this.waitForIsDisplayed();
+        this.waitForIsShown();
         this.#username.setValue(username);
         triggerOnChange('#user-name');
         this.#password.setValue(password);
@@ -59,7 +59,7 @@ class LoginPage extends BasePage {
      * @return {string}
      */
     getErrorMessage() {
-        this.#errorMessage.waitForDisplayed(DEFAULT_TIMEOUT);
+        this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
         return this.#errorMessage.getText();
     }

@@ -12,6 +12,7 @@ Following frameworks are currently supported
 - [NightWatch](./nightwatch)
 - [Protractor](./protractor)
 - [Jest-Puppeteer](./jest-puppeteer)
+- [Playwright with Jest](./jest-playwright)
 - more to follow
 
 ## First steps for all frameworks
