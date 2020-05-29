@@ -80,5 +80,14 @@ Time:        12.195 s, estimated 13 s
 Ran all test suites.
 ```
 
+You can also run the test in *headfull*-mode with this command
+
+    npm run test.local.headfull
+    
+You will then see Chrome poping up.
+
 ## Run tests on Sauce Labs
-Will follow soon
+Due to 2 issues this set can't run on the [SauceCTL Testrunner Toolkit](https://github.com/saucelabs/testrunner-toolkit) offering yet, see:
+- [Use jest-puppeteer or add `page` as a global](https://github.com/saucelabs/testrunner-toolkit/issues/)
+- [File structure is not properly copied](https://github.com/saucelabs/testrunner-toolkit/issues/13)
+
