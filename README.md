@@ -11,6 +11,7 @@ Following frameworks are currently supported
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
 - [Protractor](./protractor)
+- [Playwright with Jest](./jest-playwright)
 - more to follow
 
 ## First steps for all frameworks
