@@ -20,7 +20,7 @@ describe('LoginPage', () => {
 
         // Wait for the inventory screen and check it
         expect(await SwagOverviewPage.waitForIsDisplayed()).toEqual(
-            false,
+            true,
             'Inventory List screen was not shown',
         );
     });

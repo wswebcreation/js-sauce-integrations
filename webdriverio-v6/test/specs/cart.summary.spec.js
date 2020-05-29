@@ -11,12 +11,12 @@ describe('Cart Summary page', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CART,
         });
-        CartSummaryPage.waitForIsDisplayed();
+        CartSummaryPage.waitForIsShown();
 
         // Actual test starts here
         CartSummaryPage.continueShopping();
 
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsShown()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -27,12 +27,12 @@ describe('Cart Summary page', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CART,
         });
-        CartSummaryPage.waitForIsDisplayed();
+        CartSummaryPage.waitForIsShown();
 
         // Actual test starts here
         CartSummaryPage.goToCheckout();
 
-        expect(CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutPersonalInfoPage.waitForIsShown()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -44,7 +44,7 @@ describe('Cart Summary page', () => {
             path: PAGES.CART,
             products: [PRODUCTS.BACKPACK],
         });
-        CartSummaryPage.waitForIsDisplayed();
+        CartSummaryPage.waitForIsShown();
 
         // Actual test starts here
         expect(AppHeaderPage.getCartAmount()).toEqual(

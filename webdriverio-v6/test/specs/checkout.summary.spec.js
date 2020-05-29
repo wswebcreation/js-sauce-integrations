@@ -11,13 +11,13 @@ describe('Checkout - Summary', () => {
             path: PAGES.CHECKOUT_SUMMARY,
             products: [PRODUCTS.BACKPACK],
         });
-        CheckoutSummaryPage.waitForIsDisplayed();
+        CheckoutSummaryPage.waitForIsShown();
     });
 
     it('should validate that we can continue shopping', () => {
         CheckoutSummaryPage.finishCheckout();
 
-        expect(CheckoutCompletePage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutCompletePage.waitForIsShown()).toEqual(
             true,
             'The checkout complete page is still not shown',
         );
@@ -26,7 +26,7 @@ describe('Checkout - Summary', () => {
     it('should validate that we can cancel checkout and go to the inventory page', () => {
         CheckoutSummaryPage.cancelCheckout();
 
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsShown()).toEqual(
             true,
             'Inventory screen is still not visible'
         );

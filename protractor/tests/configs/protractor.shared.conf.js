@@ -38,8 +38,7 @@ exports.config = {
      * ]
      */
     specs: [
-        // join(process.cwd(), 'tests/specs/*.js'),
-        join(process.cwd(), 'tests/specs/login.spec.js'),
+        join(process.cwd(), 'tests/specs/*.js'),
     ],
 
     // ---------------------------------------------------------------------------
@@ -124,6 +123,7 @@ exports.config = {
 
         // Set some config data
         const processedConfig = await browser.getProcessedConfig();
+        browser.browserName = processedConfig.capabilities.browserName.toLowerCase();
 
         // Resize the screens if it is a VM
         if (!('platformName' in processedConfig.capabilities)) {

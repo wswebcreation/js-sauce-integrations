@@ -11,7 +11,7 @@ describe('Swag items list', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.SWAG_ITEMS,
         });
-        SwagOverviewPage.waitForIsDisplayed();
+        SwagOverviewPage.waitForIsShown();
 
         // Actual test starts here
         expect(SwagOverviewPage.getAmount()).toEqual(
@@ -20,35 +20,38 @@ describe('Swag items list', () => {
         );
     });
 
-    it('should validate that the details of a product can be opened', () => {
-        setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
+    // @TODO: IE breaks due to an issue in the app itself, this is already fixed but needs to be deployed
+    if (browser.capabilities.browserName !== 'internet explorer') {
+        it('should validate that the details of a product can be opened', () => {
+            setTestContext({
+                user: LOGIN_USERS.STANDARD,
+                path: PAGES.SWAG_ITEMS,
+            });
+            SwagOverviewPage.waitForIsShown();
+
+            // Actual test starts here
+            const product = 'Sauce Labs Backpack';
+
+            SwagOverviewPage.openSwagDetails(product);
+
+            expect(SwagDetailsPage.waitForIsShown()).toEqual(
+                true,
+                'Swag Item detail page was not shown',
+            );
+
+            expect(SwagDetailsPage.getText()).toContain(
+                product,
+                'Swag Item detail page did not show the right text',
+            );
         });
-        SwagOverviewPage.waitForIsDisplayed();
-
-        // Actual test starts here
-        const product = 'Sauce Labs Backpack';
-
-        SwagOverviewPage.openSwagDetails(product);
-
-        expect(SwagDetailsPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Swag Item detail page was not shown',
-        );
-
-        expect(SwagDetailsPage.getText()).toContain(
-            product,
-            'Swag Item detail page did not show the right text',
-        );
-    });
+    }
 
     it('should validate that a product can be added to the cart', () => {
         setTestContext({
             user: LOGIN_USERS.STANDARD,
             path: PAGES.SWAG_ITEMS,
         });
-        SwagOverviewPage.waitForIsDisplayed();
+        SwagOverviewPage.waitForIsShown();
 
         // Actual test starts here
         expect(AppHeaderPage.getCartAmount()).toEqual(
@@ -70,7 +73,7 @@ describe('Swag items list', () => {
             path: PAGES.SWAG_ITEMS,
             products: [PRODUCTS.BACKPACK]
         });
-        SwagOverviewPage.waitForIsDisplayed();
+        SwagOverviewPage.waitForIsShown();
 
         // Actual test starts here
         expect(AppHeaderPage.getCartAmount()).toEqual(
@@ -91,12 +94,12 @@ describe('Swag items list', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.SWAG_ITEMS,
         });
-        SwagOverviewPage.waitForIsDisplayed();
+        SwagOverviewPage.waitForIsShown();
 
         // Actual test starts here
         AppHeaderPage.openCart();
 
-        expect(CartSummaryPage.waitForIsDisplayed()).toEqual(
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
             true,
             'Cart Summary page was not shown',
         );

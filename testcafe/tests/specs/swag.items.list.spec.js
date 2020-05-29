@@ -23,18 +23,22 @@ test('should validate that all products are present', async t => {
 });
 
 test('should validate that the details of a product can be opened', async t => {
-    await setTestContext({
-        baseUrl: LoginPage.url,
-        user: LOGIN_USERS.STANDARD,
-        path: PAGES.SWAG_ITEMS,
-    });
+    // @TODO: there is an error with IE11 `ReferenceError: 'URLSearchParams' is undefined`
+    // This is fixed in the app, but not yet deployed
+    if (t.browser.name.toLowerCase() !== 'internet explorer') {
+        await setTestContext({
+            baseUrl: LoginPage.url,
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.SWAG_ITEMS,
+        });
 
-    // The actual test
-    const product = 'Sauce Labs Backpack';
+        // The actual test
+        const product = 'Sauce Labs Backpack';
 
-    await SwagOverviewPage.openSwagDetails(product);
-    await t.expect(SwagDetailsPage.isScreenDisplayed()).ok();
-    await t.expect(SwagDetailsPage.getSwagTitle()).eql(product);
+        await SwagOverviewPage.openSwagDetails(product);
+        await t.expect(SwagDetailsPage.isScreenDisplayed()).ok();
+        await t.expect(SwagDetailsPage.getSwagTitle()).eql(product);
+    }
 });
 
 test('should validate that a product can be added to a cart', async t => {

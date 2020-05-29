@@ -10,7 +10,7 @@ describe('Checkout - Personal info', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CHECKOUT_PERSONAL_INFO,
         });
-        CheckoutPersonalInfoPage.waitForIsDisplayed();
+        CheckoutPersonalInfoPage.waitForIsShown();
     });
 
     it('should validate we get an error if we don not provide all personal information', () => {
@@ -18,7 +18,7 @@ describe('Checkout - Personal info', () => {
         // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
         CheckoutPersonalInfoPage.submitPersonalInfo(PERSONAL_INFO.NO_POSTAL_CODE);
 
-        expect(CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutPersonalInfoPage.waitForIsShown()).toEqual(
             true,
             'Error message is shown, this is not correct',
         );
@@ -37,7 +37,7 @@ describe('Checkout - Personal info', () => {
 
         CheckoutPersonalInfoPage.cancelCheckout();
 
-        expect(CartSummaryPage.waitForIsDisplayed()).toEqual(
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
             true,
             'Cart content screen is still not visible'
         );
@@ -46,7 +46,7 @@ describe('Checkout - Personal info', () => {
     it('should be able to continue the checkout', () => {
         CheckoutPersonalInfoPage.submitPersonalInfo(PERSONAL_INFO.STANDARD);
 
-        expect(CheckoutSummaryPage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutSummaryPage.waitForIsShown()).toEqual(
             true,
             'Checkout page two is still not visible'
         );

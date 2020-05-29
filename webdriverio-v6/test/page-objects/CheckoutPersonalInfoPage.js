@@ -50,7 +50,7 @@ class CheckoutPersonalInfoPage extends BasePage {
     submitPersonalInfo(personalInfo) {
         const {firstName, lastName, zip} = personalInfo;
 
-        this.waitForIsDisplayed();
+        this.waitForIsShown();
         this.#firstName.addValue(firstName);
         triggerOnChange('[data-test="firstName"]');
         this.#lastName.addValue(lastName);

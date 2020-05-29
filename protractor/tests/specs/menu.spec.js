@@ -27,12 +27,15 @@ describe('Menu', () => {
     });
 
     it('should be able to open the about page', async () => {
-        await MenuPage.openAboutPage();
+        // Don't execute this test on the EU DC, the saucelabs.com url is not working there making this test fail
+        if (!process.env.REGION) {
+            await MenuPage.openAboutPage();
 
-        expect(await CartSummaryPage.isDisplayed()).toEqual(
-            false,
-            'Swag Cart should not be shown anymore',
-        );
+            expect(await CartSummaryPage.isDisplayed()).toEqual(
+                false,
+                'Swag Cart should not be shown anymore',
+            );
+        }
     });
 
     it('should be able to log out', async () => {
